@@ -1,0 +1,1126 @@
+/* Variáveis CSS para o tema Di-vidros */
+:root {
+    --primary-color: #003366; /* Azul escuro, quase marinho - profissionalismo */
+    --secondary-color: #0056b3; /* Azul médio - para destaque, links */
+    --accent-color: #e74c3c; /* Vermelho/laranja - para CTAs, destaque de energia */
+    --text-dark: #343a40; /* Cinza escuro para textos em fundos claros */
+    --text-light: #6c757d; /* Cinza médio para textos de corpo */
+    --text-on-dark: #f8f9fa; /* Branco off-white para textos em fundos escuros */
+    --bg-light: #ffffff; /* Fundo branco */
+    --bg-medium: #f8f9fa; /* Fundo cinza muito claro para alternar seções */
+    --bg-dark: #1a1a1a; /* Fundo quase preto para footer, etc. */
+    --border-color: #e0e0e0;
+
+    --transition-speed: 0.3s ease-in-out;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-strong: rgba(0, 0, 0, 0.25);
+
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+}
+
+/* Estilos Gerais e Resets */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: var(--text-light);
+    background-color: var(--bg-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Previne rolagem horizontal */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 0.8em;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: all var(--transition-speed);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Animações (para classes .animate-on-load e .animate-on-scroll) */
+.animate-on-load, .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: none; /* Controlado pelo JS */
+}
+.animate-on-load.is-animated, .animate-on-scroll.is-animated {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+/* --- Cabeçalho (Header) --- */
+.main-header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px var(--shadow-light);
+    padding: 1rem 0;
+    position: relative;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite quebra de linha em mobile */
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.main-logo {
+    height: 60px; /* Ajuste o tamanho do logo */
+    width: auto;
+    max-width: 200px;
+}
+
+/* Estilo para o site-title se for texto puro */
+/* .site-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-left: 10px;
+} */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-dark);
+    padding: 8px 0;
+    position: relative;
+}
+
+.nav-link::after { /* Linha de destaque no hover */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-color);
+    transition: width var(--transition-speed);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.nav-button { /* Estilo para o botão no menu (Orçamento Rápido) */
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.nav-link.nav-button:hover {
+    background-color: #c0392b; /* Um tom mais escuro do accent-color */
+    transform: translateY(-2px);
+}
+.nav-link.nav-button::after { /* Remover a linha de destaque do botão */
+    content: none;
+}
+
+.menu-toggle { /* Botão hamburguer para mobile */
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+}
+/* Animação do hamburguer */
+.menu-toggle.active .hamburger:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active .hamburger:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.active .hamburger:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* --- Seção Hero --- */
+.hero-section {
+    position: relative;
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover; /* Substitua pela sua imagem */
+    height: 70vh; /* Altura responsiva */
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 2rem 1.5rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay escuro para legibilidade do texto */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+.hero-welcome-text {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-size: clamp(2.5em, 5vw, 4.5em);
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: var(--white);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn { /* Estilo base para botões */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    transition: all var(--transition-speed);
+    box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow-strong);
+}
+
+.hero-cta-btn {
+    background-color: var(--accent-color); /* Botão CTA com cor de destaque */
+    font-size: 1.2em;
+    padding: 18px 35px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-cta-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+.hero-cta-btn .fab { /* Ícone Font Awesome */
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+
+/* --- Seções de Conteúdo Genéricas --- */
+.section-title {
+    font-size: clamp(2em, 4vw, 3.5em);
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-bottom: 15px; /* Espaço para a linha de destaque */
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.1em;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
+}
+
+/* --- Seção de Serviços --- */
+.services-section {
+    padding: 5rem 0;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.service-item {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 15px var(--shadow-light);
+    padding: 1.5rem;
+    text-align: center;
+    transition: all var(--transition-speed);
+    overflow: hidden;
+    position: relative;
+}
+
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.service-item img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens de serviço */
+    object-fit: cover; /* Recorta a imagem para preencher o espaço */
+    border-radius: var(--border-radius-md);
+    margin-bottom: 1.5rem;
+}
+
+.service-item h3 {
+    font-size: 1.4em;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.service-item p {
+    font-size: 0.95em;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+
+/* --- Seção Portfólio --- */
+.portfolio-section {
+    padding: 5rem 0;
+    background-color: var(--bg-medium); /* Fundo contrastante */
+    text-align: center;
+}
+
+.myPortfolioSwiper {
+    padding-bottom: 3rem; /* Espaço para paginação */
+    margin-top: 3rem;
+}
+
+.portfolio-item {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow-medium);
+    position: relative;
+    background-color: var(--white);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 300px; /* Altura fixa para as imagens do portfólio */
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--white);
+    font-size: 1.1em;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(100%); /* Escondido por padrão */
+    transition: transform var(--transition-speed);
+}
+
+.portfolio-item:hover .portfolio-caption {
+    transform: translateY(0); /* Revela no hover */
+}
+
+/* Swiper Navigation & Pagination (para o portfólio) */
+.myPortfolioSwiper .swiper-button-next,
+.myPortfolioSwiper .swiper-button-prev {
+    color: var(--primary-color) !important;
+    font-size: 2.5rem !important;
+    opacity: 0.7;
+}
+
+.myPortfolioSwiper .swiper-button-next:hover,
+.myPortfolioSwiper .swiper-button-prev:hover {
+    opacity: 1;
+}
+
+.myPortfolioSwiper .swiper-pagination-bullet {
+    background-color: var(--text-light) !important;
+    opacity: 0.6;
+    width: 10px;
+    height: 10px;
+}
+
+.myPortfolioSwiper .swiper-pagination-bullet-active {
+    background-color: var(--primary-color) !important;
+    opacity: 1;
+}
+
+
+/* --- Seção Quem Somos --- */
+.about-section {
+    padding: 5rem 0;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem; /* Espaço entre imagem e texto */
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+.about-text {
+    text-align: left;
+    max-width: 700px;
+}
+
+.about-text .section-title {
+    text-align: left;
+    margin-left: 0; /* Alinha a linha de destaque também */
+}
+.about-text .section-title::after {
+    margin-left: 0; /* Alinha a linha de destaque também */
+}
+
+.about-text p {
+    font-size: 1.05em;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.about-cta {
+    background-color: var(--primary-color);
+    color: var(--white);
+    margin-top: 1rem;
+    padding: 12px 25px;
+    border-radius: var(--border-radius-md);
+    font-size: 1em;
+}
+.about-cta:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* --- Seção Orçamento Rápido --- */
+.quote-section {
+    padding: 5rem 0;
+    background-color: var(--secondary-color); /* Cor secundária para fundo */
+    color: var(--text-on-dark);
+    text-align: center;
+}
+
+.quote-section .section-title {
+    color: var(--white);
+}
+.quote-section .section-title::after {
+    background-color: var(--accent-color);
+}
+
+.quote-section .section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.quote-whatsapp-btn {
+    background-color: #25D366; /* Verde WhatsApp */
+    color: var(--white);
+    font-size: 1.2em;
+    padding: 18px 40px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 2rem;
+}
+.quote-whatsapp-btn:hover {
+    background-color: #1DA851;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+.quote-whatsapp-btn .fab {
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+.quote-text {
+    font-size: 1.1em;
+    margin-top: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+
+/* --- Seção Contato --- */
+.contact-section {
+    padding: 5rem 0;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.contact-item {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all var(--transition-speed);
+}
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-medium);
+}
+
+.contact-icon {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.contact-item h3 {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    font-size: 0.95em;
+    color: var(--text-dark);
+}
+.contact-item p a {
+    color: var(--text-dark); /* Links no contato */
+}
+.contact-item p a:hover {
+    color: var(--accent-color);
+}
+
+.contact-map {
+    margin-top: 3rem;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow-medium);
+}
+.contact-map iframe {
+    border: 0;
+}
+
+
+/* --- Seção Dicas --- */
+.tips-section {
+    padding: 5rem 0;
+    background-color: var(--bg-medium);
+    text-align: center;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.tip-item {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 15px var(--shadow-light);
+    padding: 1.5rem;
+    text-align: left;
+    transition: all var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+}
+.tip-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.tip-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 1.5rem;
+}
+
+.tip-item h3 {
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.tip-item p {
+    font-size: 0.9em;
+    color: var(--text-light);
+    line-height: 1.5;
+    flex-grow: 1; /* Para empurrar o "Leia Mais" para baixo */
+}
+
+.tip-item .read-more {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+.tip-item .read-more i {
+    margin-left: 5px;
+    transition: transform var(--transition-speed);
+}
+.tip-item .read-more:hover i {
+    transform: translateX(5px);
+}
+
+
+/* --- Rodapé (Footer) --- */
+.main-footer {
+    background-color: var(--bg-dark);
+    color: var(--text-on-dark);
+    padding: 3rem 0;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.footer-brand .footer-logo {
+    height: 70px;
+    width: auto;
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+.footer-brand .footer-slogan {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.main-footer h3 {
+    color: var(--white);
+    font-size: 1.2em;
+    margin-bottom: 1rem;
+}
+
+.main-footer ul {
+    list-style: none;
+    padding: 0;
+}
+.main-footer ul li {
+    margin-bottom: 0.5rem;
+}
+.main-footer ul li a {
+    color: rgba(255, 255, 255, 0.7);
+}
+.main-footer ul li a:hover {
+    color: var(--accent-color);
+}
+
+.main-footer p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+}
+.main-footer p .fas, .main-footer p .fab {
+    margin-right: 8px;
+    color: var(--accent-color);
+}
+.main-footer p a {
+    color: rgba(255, 255, 255, 0.7);
+}
+.main-footer p a:hover {
+    color: var(--accent-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 1rem;
+}
+.social-icons a {
+    font-size: 1.5em;
+    color: var(--white);
+    transition: color var(--transition-speed);
+}
+.social-icons a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    text-align: center;
+}
+.footer-bottom p {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* --- Botão Flutuante de WhatsApp --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #25D366;
+    color: var(--white);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2em;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: all var(--transition-speed);
+}
+
+.whatsapp-float:hover {
+    background-color: #1DA851;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+
+/* ========================================= */
+/* Media Queries para Responsividade */
+/* ========================================= */
+
+/* Desktop (acima de 992px) - Ajustes específicos */
+@media (min-width: 992px) {
+    .main-header {
+        padding: 1rem 0;
+    }
+    .main-nav .nav-menu {
+        gap: 2rem;
+    }
+    .hero-section {
+        height: 80vh; /* Mais altura para desktop */
+        min-height: 650px;
+    }
+    .hero-welcome-text {
+        font-size: 1.2em;
+    }
+    .hero-title {
+        font-size: 4.8em;
+    }
+
+    .services-section, .portfolio-section, .about-section, .quote-section, .contact-section, .tips-section {
+        padding: 6rem 0; /* Mais padding em seções */
+    }
+    .section-title {
+        font-size: 4em;
+    }
+    .section-title::after {
+        width: 100px;
+        height: 5px;
+    }
+    .section-subtitle {
+        font-size: 1.2em;
+    }
+
+    .service-item img {
+        height: 220px;
+    }
+    .service-item h3 {
+        font-size: 1.6em;
+    }
+
+    .about-content {
+        flex-direction: row; /* Imagem e texto lado a lado */
+        text-align: left;
+        align-items: flex-start;
+    }
+    .about-image {
+        flex: 1;
+        max-width: 45%; /* Controla a largura da imagem */
+    }
+    .about-text {
+        flex: 1;
+        max-width: 50%; /* Controla a largura do texto */
+        padding-left: 2rem; /* Espaço entre imagem e texto */
+    }
+
+    .contact-info-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas em desktop */
+    }
+    .tips-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .tip-item img {
+        height: 200px;
+    }
+    .tip-item h3 {
+        font-size: 1.4em;
+    }
+
+    .footer-content {
+        grid-template-columns: 2fr 1fr 2fr 1fr; /* Layout mais complexo no footer */
+    }
+}
+
+/* Tablets (de 768px até 991px) */
+@media (max-width: 991px) {
+    .container {
+        padding: 0 1rem;
+    }
+    .main-logo {
+        height: 50px;
+    }
+    .nav-menu {
+        gap: 1rem;
+    }
+    .nav-link {
+        font-size: 0.9em;
+    }
+    .nav-link.nav-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .hero-section {
+        height: 60vh;
+        min-height: 450px;
+    }
+    .hero-welcome-text {
+        font-size: 1em;
+    }
+    .hero-title {
+        font-size: clamp(2.2em, 4.5vw, 3.8em);
+    }
+    .hero-cta-btn {
+        padding: 15px 30px;
+        font-size: 1.1em;
+    }
+
+    .services-section, .portfolio-section, .about-section, .quote-section, .contact-section, .tips-section {
+        padding: 4rem 0;
+    }
+    .section-title {
+        font-size: clamp(1.8em, 3.5vw, 3em);
+        padding-bottom: 10px;
+    }
+    .section-title::after {
+        width: 60px;
+        height: 3px;
+    }
+    .section-subtitle {
+        font-size: 1em;
+        margin-bottom: 2rem;
+    }
+
+    .services-grid {
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .service-item img {
+        height: 180px;
+    }
+    .service-item h3 {
+        font-size: 1.3em;
+    }
+
+    .myPortfolioSwiper {
+        padding-bottom: 2.5rem;
+    }
+    .portfolio-item img {
+        height: 250px;
+    }
+
+    .about-content {
+        gap: 2rem;
+    }
+    .about-text {
+        max-width: 90%;
+    }
+
+    .contact-info-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablet */
+    }
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .tip-item img {
+        height: 150px;
+    }
+    .tip-item h3 {
+        font-size: 1.2em;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
+    }
+    .footer-logo {
+        height: 60px;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 2em;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+}
+
+/* Mobile (até 767px) */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Menu hamburguer */
+    .menu-toggle {
+        display: block;
+    }
+    .main-nav {
+        position: fixed;
+        top: 0; /* Ajuste se o header tiver altura diferente */
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary-color); /* Fundo do menu mobile */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%); /* Escondido por padrão */
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+    }
+    .main-nav.active {
+        transform: translateX(0); /* Mostra o menu */
+    }
+    .nav-menu {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        width: 100%;
+    }
+    .nav-menu li {
+        width: 100%;
+    }
+    .nav-link {
+        color: var(--white); /* Links brancos no menu mobile */
+        font-size: 1.5em;
+        padding: 15px 0;
+        display: block;
+    }
+    .nav-link::after { /* Remover linha de destaque no menu mobile */
+        content: none;
+    }
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil no hover */
+        border-radius: var(--border-radius-sm);
+    }
+    .nav-link.nav-button {
+        background-color: var(--accent-color);
+        color: var(--white);
+        margin: 1rem auto; /* Centraliza o botão */
+        width: 80%;
+    }
+
+
+    .hero-section {
+        height: 55vh;
+        min-height: 400px;
+        padding: 3rem 1rem;
+    }
+    .hero-welcome-text {
+        font-size: 0.9em;
+    }
+    .hero-title {
+        font-size: clamp(1.8em, 8vw, 3em);
+        margin-bottom: 1.5rem;
+    }
+    .hero-cta-btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .services-section, .portfolio-section, .about-section, .quote-section, .contact-section, .tips-section {
+        padding: 3rem 0;
+    }
+    .section-title {
+        font-size: clamp(1.6em, 7vw, 2.5em);
+        padding-bottom: 8px;
+    }
+    .section-title::after {
+        width: 50px;
+        height: 3px;
+        margin: 5px auto 0;
+    }
+    .section-subtitle {
+        font-size: 0.95em;
+        margin-bottom: 1.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Uma coluna em mobile */
+        gap: 1.5rem;
+    }
+    .service-item img {
+        height: 150px;
+    }
+    .service-item h3 {
+        font-size: 1.2em;
+    }
+    .service-item p {
+        font-size: 0.85em;
+    }
+
+    .portfolio-item img {
+        height: 200px;
+    }
+
+    .about-content {
+        gap: 2rem;
+    }
+    .about-image {
+        max-width: 90%;
+    }
+    .about-text {
+        max-width: 100%;
+        padding: 0 1rem; /* Padding para o texto em mobile */
+    }
+    .about-text .section-title {
+        text-align: center; /* Centraliza o título */
+    }
+    .about-text .section-title::after {
+        margin: 5px auto 0; /* Centraliza a linha */
+    }
+    .about-text p {
+        text-align: center; /* Centraliza o texto */
+    }
+    .about-cta {
+        margin-top: 1.5rem;
+    }
+
+    .contact-info-grid {
+        grid-template-columns: 1fr; /* Uma coluna em mobile */
+        gap: 1.5rem;
+    }
+    .contact-map {
+        margin-top: 2rem;
+    }
+    .tips-grid {
+        grid-template-columns: 1fr; /* Uma coluna em mobile */
+        gap: 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* Uma coluna em mobile */
+        text-align: center;
+    }
+    .footer-brand, .footer-nav, .footer-contact, .footer-social {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-nav ul, .footer-contact p {
+        text-align: center;
+    }
+    .footer-nav ul {
+        gap: 0.5rem;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 2em;
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
