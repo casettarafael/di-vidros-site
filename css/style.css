@@ -1,14 +1,22 @@
-/* Variáveis CSS para o tema Di-vidros */
+/* Variáveis CSS para o tema Di-vidros (SUAS CORES DEFINITIVAS) */
 :root {
-    --primary-color: #a3a6aa; /* Azul escuro, quase marinho - profissionalismo */
-    --secondary-color: #8f959c; /* Azul médio - para destaque, links */
-    --accent-color: #fba399; /* Vermelho/laranja - para CTAs, destaque de energia */
+    --primary-color: #a3a6aa; /* Cor primária (azul escuro original alterado para este cinza) */
+    --secondary-color: #8f959c; /* Cor secundária (azul médio original alterado) */
+    --accent-color: #fba399; /* Cor de destaque (vermelho/laranja original alterado) */
+    --whatsapp-green: #25D366; /* Verde WhatsApp */
+
+    --header-bg: #1a1a1a; /* Cor do cabeçalho que você escolheu (bg-dark) */
+    --header-link-color: #ffffff; /* Cor dos links do cabeçalho (branco) */
+    --header-link-hover-bg: rgba(255, 255, 255, 0.1); /* Fundo do hover para links claros */
+
     --text-dark: #343a40; /* Cinza escuro para textos em fundos claros */
-    --text-light: #6c757d; /* Cinza médio para textos de corpo */
+    --text-light: #e0e5e9; /* Cinza médio para textos de corpo */
     --text-on-dark: #f8f9fa; /* Branco off-white para textos em fundos escuros */
-    --bg-light: #26252c; /* Fundo branco */
+
+    --bg-light: #26252c; /* Fundo claro (agora um cinza bem escuro) */
     --bg-medium: #f8f9fa; /* Fundo cinza muito claro para alternar seções */
-    --bg-dark: #1a1a1a; /* Fundo quase preto para footer, etc. */
+    --bg-dark: #1a1a1a; /* Fundo quase preto para footer, etc. (Usado agora no cabeçalho) */
+
     --border-color: #e0e0e0;
 
     --transition-speed: 0.3s ease-in-out;
@@ -77,8 +85,8 @@ a:hover {
 
 /* --- Cabeçalho (Header) --- */
 .main-header {
-    background-color: var(--white);
-    box-shadow: 0 2px 10px var(--shadow-light);
+    background-color: var(--header-bg); /* FUNDO ESCURO DO CABEÇALHO */
+    box-shadow: none; /* Sem sombra para fundo escuro */
     padding: 1rem 0;
     position: relative;
     z-index: 1000;
@@ -88,7 +96,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Permite quebra de linha em mobile */
+    flex-wrap: wrap; 
 }
 
 .logo-area {
@@ -97,9 +105,10 @@ a:hover {
 }
 
 .main-logo {
-    height: 60px; /* Ajuste o tamanho do logo */
+    height: 60px; 
     width: auto;
     max-width: 200px;
+    filter: brightness(0) invert(1); /* Filtro para logo branco/claro */
 }
 
 .main-nav {
@@ -115,7 +124,7 @@ a:hover {
 
 .nav-link {
     font-weight: 500;
-    color: var(--text-dark);
+    color: var(--header-link-color); /* LINKS DE NAVEGAÇÃO CLAROS */
     padding: 8px 0;
     position: relative;
 }
@@ -136,7 +145,12 @@ a:hover {
     width: 100%;
 }
 
-.nav-link.nav-button { /* Estilo para o botão no menu (Orçamento Rápido) */
+.nav-link:hover {
+    background-color: var(--header-link-hover-bg); /* Fundo sutil no hover (PARA FUNDO ESCURO) */
+    border-radius: var(--border-radius-sm);
+}
+
+.nav-link.nav-button { /* Botão no menu (Orçamento Rápido) */
     background-color: var(--accent-color);
     color: var(--white);
     padding: 10px 20px;
@@ -147,49 +161,37 @@ a:hover {
 }
 
 .nav-link.nav-button:hover {
-    background-color: #c0392b; /* Um tom mais escuro do accent-color */
+    background-color: #c0392b; 
     transform: translateY(-2px);
 }
-.nav-link.nav-button::after { /* Remover a linha de destaque do botão */
+.nav-link.nav-button::after { 
     content: none;
 }
 
-.menu-toggle { /* Botão hamburguer para mobile */
-    display: none; /* Escondido por padrão em desktop */
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1001; /* Garante que esteja acima do menu */
+.menu-toggle { /* Botão hamburguer - AGORA SEMPRE ESCONDIDO */
+    display: none !important; /* FORÇA A ESCONDER O BOTÃO HAMBURGUER */
 }
 
-.hamburger {
-    display: block;
+.hamburger { /* Estilo das barras do hamburguer - será irrelevante pois o botão está escondido */
+    display: block; 
     width: 25px;
     height: 3px;
-    background-color: var(--primary-color); /* Cor principal das barras do hamburguer */
+    background-color: var(--white); 
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
 }
-/* Animação do hamburguer */
-.menu-toggle.active .hamburger:nth-child(2) {
-    opacity: 0;
-}
-.menu-toggle.active .hamburger:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-.menu-toggle.active .hamburger:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
+/* Animação do hamburguer - será irrelevante */
+.menu-toggle.active .hamburger:nth-child(2) { opacity: 0; }
+.menu-toggle.active .hamburger:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.active .hamburger:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 
-/* --- Seção Hero - CORRIGIDO O CAMINHO DA IMAGEM E CONTRASTE --- */
+/* --- Seção Hero - Imagem de fundo e contraste --- */
 .hero-section {
     position: relative;
     /* Caminho da imagem de fundo: images/di.jpg */
-    background: url('../images/di.jpg') no-repeat center center/cover; 
-    height: 70vh; /* Altura responsiva */
+    background: url('../images/fro2.jpg') no-repeat center center/cover; 
+    height: 70vh; 
     min-height: 500px;
     display: flex;
     align-items: center;
@@ -199,15 +201,16 @@ a:hover {
     padding: 2rem 1.5rem;
 }
 
+/* REMOVENDO O OVERLAY ESCURO PARA DEIXAR APENAS A IMAGEM APARECER */
 .hero-overlay {
+    background-color: transparent; /* AQUI A MUDANÇA: FUNDO TRANSPARENTE */
+    /* Você pode remover todo o bloco .hero-overlay se não quiser nenhum efeito de camada */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Escurecido para 0.85 para melhor contraste do texto */
-    background-color: rgba(0, 0, 0, 0.85); 
-    z-index: 1;
+    z-index: 1; /* Mantenha o z-index para que o texto ainda esteja acima */
 }
 
 .hero-content {
@@ -220,19 +223,20 @@ a:hover {
     font-size: 1.1em;
     font-weight: 500;
     margin-bottom: 10px;
-    /* Corrigido para branco puro para melhor contraste */
     color: var(--white); 
     letter-spacing: 2px;
     text-transform: uppercase;
+    /* Se o texto ficar ilegível diretamente na imagem, adicione text-shadow */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8); 
 }
 
 .hero-title {
     font-size: clamp(2.5em, 5vw, 4.5em);
     font-weight: 800;
     margin-bottom: 2rem;
-    /* Corrigido para branco puro para melhor contraste */
     color: var(--white); 
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Aumentada a sombra para texto para mais definição */
+    /* Aumentei a sombra do texto para ajudar a legibilidade direto na imagem */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); 
 }
 
 .btn { /* Estilo base para botões */
@@ -257,7 +261,7 @@ a:hover {
 }
 
 .hero-cta-btn {
-    background-color: var(--accent-color); /* Botão CTA com cor de destaque */
+    background-color: var(--accent-color); 
     font-size: 1.2em;
     padding: 18px 35px;
     border-radius: var(--border-radius-lg);
@@ -265,11 +269,11 @@ a:hover {
 }
 
 .hero-cta-btn:hover {
-    background-color: #c0392b; /* Um tom mais escuro do accent-color */
+    background-color: #c0392b; 
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
-.hero-cta-btn .fab { /* Ícone Font Awesome */
+.hero-cta-btn .fab { 
     margin-right: 10px;
     font-size: 1.3em;
 }
@@ -282,7 +286,7 @@ a:hover {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     position: relative;
-    padding-bottom: 15px; /* Espaço para a linha de destaque */
+    padding-bottom: 15px; 
 }
 
 .section-title::after {
@@ -335,8 +339,8 @@ a:hover {
 
 .service-item img {
     width: 100%;
-    height: 200px; /* Altura fixa para as imagens de serviço */
-    object-fit: cover; /* Recorta a imagem para preencher o espaço */
+    height: 200px; 
+    object-fit: cover; 
     border-radius: var(--border-radius-md);
     margin-bottom: 1.5rem;
 }
@@ -357,12 +361,12 @@ a:hover {
 /* --- Seção Portfólio --- */
 .portfolio-section {
     padding: 5rem 0;
-    background-color: var(--bg-medium); /* Fundo contrastante */
+    background-color: var(--bg-medium); 
     text-align: center;
 }
 
 .myPortfolioSwiper {
-    padding-bottom: 3rem; /* Espaço para paginação */
+    padding-bottom: 3rem; 
     margin-top: 3rem;
 }
 
@@ -376,7 +380,7 @@ a:hover {
 
 .portfolio-item img {
     width: 100%;
-    height: 300px; /* Altura fixa para as imagens do portfólio */
+    height: 300px; 
     object-fit: cover;
     display: block;
 }
@@ -390,12 +394,12 @@ a:hover {
     bottom: 0;
     left: 0;
     width: 100%;
-    transform: translateY(100%); /* Escondido por padrão */
+    transform: translateY(100%); 
     transition: transform var(--transition-speed);
 }
 
 .portfolio-item:hover .portfolio-caption {
-    transform: translateY(0); /* Revela no hover */
+    transform: translateY(0); 
 }
 
 /* Swiper Navigation & Pagination (para o portfólio) */
@@ -435,7 +439,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem; /* Espaço entre imagem e texto */
+    gap: 3rem; 
 }
 
 .about-image img {
@@ -451,10 +455,10 @@ a:hover {
 
 .about-text .section-title {
     text-align: left;
-    margin-left: 0; /* Alinha a linha de destaque também */
+    margin-left: 0; 
 }
 .about-text .section-title::after {
-    margin-left: 0; /* Alinha a linha de destaque também */
+    margin-left: 0; 
 }
 
 .about-text p {
@@ -480,7 +484,7 @@ a:hover {
 /* --- Seção Orçamento Rápido --- */
 .quote-section {
     padding: 5rem 0;
-    background-color: var(--secondary-color); /* Cor secundária para fundo */
+    background-color: var(--secondary-color); 
     color: var(--text-on-dark);
     text-align: center;
 }
@@ -497,7 +501,7 @@ a:hover {
 }
 
 .quote-whatsapp-btn {
-    background-color: #25D366; /* Verde WhatsApp */
+    background-color: #25D366; 
     color: var(--white);
     font-size: 1.2em;
     padding: 18px 40px;
@@ -570,7 +574,7 @@ a:hover {
     color: var(--text-dark);
 }
 .contact-item p a {
-    color: var(--text-dark); /* Links no contato */
+    color: var(--text-dark); 
 }
 .contact-item p a:hover {
     color: var(--accent-color);
@@ -590,7 +594,7 @@ a:hover {
 /* --- Seção Dicas --- */
 .tips-section {
     padding: 5rem 0;
-    background-color: var(--bg-medium);
+    background-color: var(--bg-medium); 
     text-align: center;
 }
 
@@ -634,7 +638,7 @@ a:hover {
     font-size: 0.9em;
     color: var(--text-light);
     line-height: 1.5;
-    flex-grow: 1; /* Para empurrar o "Leia Mais" para baixo */
+    flex-grow: 1; 
 }
 
 .tip-item .read-more {
@@ -780,7 +784,7 @@ a:hover {
         gap: 2rem;
     }
     .hero-section {
-        height: 80vh; /* Mais altura para desktop */
+        height: 80vh; 
         min-height: 650px;
     }
     .hero-welcome-text {
@@ -791,7 +795,7 @@ a:hover {
     }
 
     .services-section, .portfolio-section, .about-section, .quote-section, .contact-section, .tips-section {
-        padding: 6rem 0; /* Mais padding em seções */
+        padding: 6rem 0; 
     }
     .section-title {
         font-size: 4em;
@@ -812,22 +816,22 @@ a:hover {
     }
 
     .about-content {
-        flex-direction: row; /* Imagem e texto lado a lado */
+        flex-direction: row; 
         text-align: left;
         align-items: flex-start;
     }
     .about-image {
         flex: 1;
-        max-width: 45%; /* Controla a largura da imagem */
+        max-width: 45%; 
     }
     .about-text {
         flex: 1;
-        max-width: 50%; /* Controla a largura do texto */
-        padding-left: 2rem; /* Espaço entre imagem e texto */
+        max-width: 50%; 
+        padding-left: 2rem; 
     }
 
     .contact-info-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 colunas em desktop */
+        grid-template-columns: repeat(4, 1fr); 
     }
     .tips-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -840,7 +844,7 @@ a:hover {
     }
 
     .footer-content {
-        grid-template-columns: 2fr 1fr 2fr 1fr; /* Layout mais complexo no footer */
+        grid-template-columns: 2fr 1fr 2fr 1fr; 
     }
 }
 
@@ -920,7 +924,7 @@ a:hover {
     }
 
     .contact-info-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablet */
+        grid-template-columns: repeat(2, 1fr); 
     }
     .tips-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -948,72 +952,69 @@ a:hover {
     }
 }
 
-/* Mobile (até 767px) */
+/* Mobile (até 767px) - MENU SEMPRE VISÍVEL */
 @media (max-width: 767px) {
     .container {
         padding: 0 1rem;
     }
 
-    /* Menu hamburguer - MODIFICADO */
+    /* Esconde o botão hamburguer completamente */
     .menu-toggle {
-        display: block; /* Garante que o botão hamburguer é visível no mobile */
-        position: relative; 
-        z-index: 1001; 
-        /* Cor temporária para ajudar a ver o botão */
-        border: 2px solid red; 
-    }
-    .hamburger {
-        /* A cor do hamburguer será branca para contrastar com o fundo azul do menu mobile */
-        background-color: var(--white); 
+        display: none !important; 
     }
 
-    /* Menu de navegação principal - MODIFICADO */
+    /* O menu de navegação principal AGORA SEMPRE VISÍVEL NO MOBILE */
     .main-nav {
-        position: fixed;
-        top: 0; /* Ajustado para 0, para cobrir toda a tela */
-        left: 0;
+        position: static; /* Não é mais fixo */
+        top: auto; 
+        left: auto;
         width: 100%;
-        height: 100%;
-        background-color: var(--primary-color); /* Fundo do menu mobile */
-        flex-direction: column;
+        height: auto; /* Altura se ajusta ao conteúdo */
+        background-color: transparent; /* Fundo transparente (usa o fundo do cabeçalho) */
+        flex-direction: column; /* Itens empilhados verticalmente */
         justify-content: center;
         align-items: center;
-        transform: translateX(100%); /* Escondido por padrão */
-        transition: transform 0.3s ease-in-out;
-        z-index: 1000;
-        /* Adicionado para garantir que o conteúdo não role com o menu aberto */
-        overflow-y: auto; 
+        transform: none; /* Remove qualquer transformação */
+        transition: none; /* Remove transição de slide */
+        z-index: auto; /* Z-index normal */
+        overflow-y: visible; /* Sem rolagem interna */
+        margin-top: 1rem; /* Espaço entre o logo/header-content e o menu */
     }
-    .main-nav.active {
-        transform: translateX(0); /* Mostra o menu */
+    /* A classe .active não é mais necessária para o .main-nav, pois ele está sempre visível */
+    .main-nav.active { /* Manter para evitar erros, mas não terá efeito */
+        transform: none; 
     }
+
     .nav-menu {
-        flex-direction: column;
-        gap: 1.5rem;
+        flex-direction: column; /* Links empilhados */
+        gap: 0.5rem; /* Espaçamento menor entre links */
         text-align: center;
         width: 100%;
+        margin-top: 0; /* Remove margem superior extra */
     }
     .nav-menu li {
         width: 100%;
+        margin-bottom: 0.2rem; /* Pequena margem entre itens */
     }
     .nav-link {
-        color: var(--white); /* Links brancos no menu mobile */
-        font-size: 1.5em;
-        padding: 15px 0;
-        display: block;
+        color: var(--header-link-color); /* Cor do texto dos links (clara) */
+        font-size: 1em; /* Tamanho ajustado para caber mais links */
+        padding: 8px 10px; /* Padding para cada link */
+        display: block; /* Ocupa a largura total */
+        border-radius: var(--border-radius-sm);
+        background-color: rgba(255, 255, 255, 0.05); /* Fundo sutil para cada item de menu */
     }
-    .nav-link::after { /* Remover linha de destaque no menu mobile */
+    .nav-link::after { /* Remover a linha de destaque no mobile */
         content: none;
     }
     .nav-link:hover {
         background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil no hover */
-        border-radius: var(--border-radius-sm);
     }
     .nav-link.nav-button {
-        background-color: var(--accent-color);
-        color: var(--white);
-        margin: 1rem auto; /* Centraliza o botão */
-        width: 80%;
+        margin: 0.5rem auto; /* Centraliza o botão e adiciona margem vertical */
+        width: 90%; /* Deixa o botão um pouco menor que os outros links */
+        padding: 8px 15px; /* Ajusta o padding */
+        font-size: 1em;
     }
 
 
