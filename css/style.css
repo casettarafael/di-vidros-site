@@ -380,7 +380,7 @@ a:hover {
 
 .portfolio-item img {
     width: 100%;
-    height: 300px; 
+    height: 350px; 
     object-fit: cover;
     display: block;
 }
@@ -1057,7 +1057,7 @@ a:hover {
         gap: 1.5rem;
     }
     .service-item img {
-        height: 150px;
+        height: 280px; /* ALTERADO AQUI PARA MAIOR TAMANHO EM MOBILE (Serviços) */
     }
     .service-item h3 {
         font-size: 1.2em;
@@ -1067,7 +1067,7 @@ a:hover {
     }
 
     .portfolio-item img {
-        height: 200px;
+        height: 320px; /* ALTERADO AQUI PARA MAIOR TAMANHO EM MOBILE (Portfólio) */
     }
 
     .about-content {
@@ -1104,6 +1104,12 @@ a:hover {
         grid-template-columns: 1fr; /* Uma coluna em mobile */
         gap: 1.5rem;
     }
+    .tip-item img {
+        height: 280px; /* ALTERADO AQUI PARA MAIOR TAMANHO EM MOBILE (Dicas) */
+    }
+    .tip-item h3 {
+        font-size: 1.2em;
+    }
 
     .footer-content {
         grid-template-columns: 1fr; /* Uma coluna em mobile */
@@ -1123,7 +1129,7 @@ a:hover {
     .social-icons {
         justify-content: center;
     }
-    
+
     .whatsapp-float {
         width: 50px;
         height: 50px;
@@ -1131,4 +1137,35 @@ a:hover {
         bottom: 1rem;
         right: 1rem;
     }
+}
+/* Estilo para o botão de ligação na seção de orçamento */
+.quote-call-btn {
+    /* Herda muitos estilos do .btn */
+    background-color: var(--primary-color); /* Use a cor primária (cinza) */
+    color: var(--white); /* Texto branco */
+    font-size: 1.2em; /* Mesma fonte do WhatsApp */
+    padding: 18px 40px; /* Mesmo padding do WhatsApp */
+    border-radius: var(--border-radius-lg); /* Mesmo border-radius do WhatsApp */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Mesma sombra do WhatsApp */
+    margin-top: 1rem; /* Espaçamento entre o texto "Ou ligue" e o botão */
+    display: inline-flex; /* Garante que ícone e texto fiquem na mesma linha */
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-call-btn:hover {
+    background-color: var(--secondary-color); /* Mudar para a secondary-color no hover (azul escuro/cinza escuro) */
+    transform: translateY(-4px); /* Mesma animação de hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Mesma sombra no hover */
+}
+
+.quote-call-btn .fas {
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+    font-size: 1.3em; /* Tamanho do ícone */
+}
+
+/* Ajustar a margem do texto "Ou ligue para nós:" para o botão de WhatsApp */
+/* O .quote-text já existe, mas talvez precise de uma margem inferior menor se houver um botão logo abaixo */
+.quote-text {
+    margin-bottom: 1rem; /* Margem entre o texto "Ou ligue para nós" e o botão de ligação */
 }
