@@ -1,6 +1,6 @@
 /* Variáveis CSS para o tema Di-vidros (SUAS CORES DEFINITIVAS) */
 :root {
-    --primary-color: #a3a6aa; /* Cor primária (azul escuro original alterado para este cinza) */
+    --primary-color: #8d8d8d; /* Cor primária (azul escuro original alterado para este cinza) */
     --secondary-color: #373738; /* Cor secundária (azul médio original alterado) */
     --accent-color: #ff0000; /* Cor de destaque (vermelho/laranja original alterado) */
     --whatsapp-green: #25D366; /* Verde WhatsApp */
@@ -9,12 +9,12 @@
     --header-link-color: #ffffff; /* Cor dos links do cabeçalho (branco) */
     --header-link-hover-bg: rgba(255, 255, 255, 0.1); /* Fundo do hover para links claros */
 
-    --text-dark: #343a40; /* Cinza escuro para textos em fundos claros */
+    --text-dark: #efefef; /* Cinza escuro para textos em fundos claros */
     --text-light: #e0e5e9; /* Cinza médio para textos de corpo */
     --text-on-dark: #f8f9fa; /* Branco off-white para textos em fundos escuros */
 
     --bg-light: #26252c; /* Fundo claro (agora um cinza bem escuro) */
-    --bg-medium: #f8f9fa; /* Fundo cinza muito claro para alternar seções */
+    --bg-medium: #d7d7d7; /* Fundo cinza muito claro para alternar seções */
     --bg-dark: #1a1a1a; /* Fundo quase preto para footer, etc. (Usado agora no cabeçalho) */
 
     --border-color: #e0e0e0;
