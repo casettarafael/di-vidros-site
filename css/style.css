@@ -2,7 +2,7 @@
 :root {
     --primary-color: #a3a6aa; /* Cor primária (azul escuro original alterado para este cinza) */
     --secondary-color: #8f959c; /* Cor secundária (azul médio original alterado) */
-    --accent-color: #fba399; /* Cor de destaque (vermelho/laranja original alterado) */
+    --accent-color: #ff2d16; /* Cor de destaque (vermelho/laranja original alterado) */
     --whatsapp-green: #25D366; /* Verde WhatsApp */
 
     --header-bg: #1a1a1a; /* Cor do cabeçalho que você escolheu (bg-dark) */
