@@ -10,7 +10,6 @@
     <meta name="geo.region" content="BR-SP">
     <meta name="geo.placename" content="São Bernardo do Campo">
     
-    <!-- Open Graph para Redes Sociais (WhatsApp/Facebook) -->
     <meta property="og:title" content="Di-vidros | Soluções em Vidros e Esquadrias no ABC">
     <meta property="og:description" content="Especialistas em vidros, boxes e esquadrias de alumínio. Atendemos todo o ABC e Capital. Peça seu orçamento!">
     <meta property="og:image" content="images/didi.png">
@@ -21,13 +20,12 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-    <!-- Schema.org - Dados Estruturados para Negócio Local -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -58,17 +56,29 @@
         "Diadema",
         "São Paulo"
       ],
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
-      "sameAs": ["https://www.instagram.com/dividrossp", "https://www.facebook.com/share/16tSUMyFy7/"],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/dividrossp",
+        "https://www.facebook.com/share/16tSUMyFy7/"
+      ],
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": 4.9,
-        "reviewCount": 87
+        "ratingValue": "4.9",
+        "reviewCount": "87"
       }
     }
     </script>
@@ -242,7 +252,6 @@
             </div>
         </section>
 
-        <!-- NOVA SEÇÃO: Depoimentos (Prova Social + SEO Local) -->
         <section id="depoimentos" class="testimonials-section">
             <div class="container">
                 <h2 class="section-title">O que dizem nossos clientes</h2>
@@ -268,7 +277,6 @@
             </div>
         </section>
 
-        <!-- NOVA SEÇÃO: FAQ (Perguntas Frequentes para SEO) -->
         <section id="faq" class="faq-section">
             <div class="container">
                 <h2 class="section-title">Dúvidas Frequentes</h2>
@@ -303,7 +311,6 @@
             </div>
         </section>
 
-        <!-- NOVA SEÇÃO: Conteúdo SEO Local (Texto rico para robôs do Google) -->
         <section class="seo-local-content">
             <div class="container">
                 <h2>Atendimento Especializado em Vidraçaria no ABC e SP</h2>
@@ -315,7 +322,6 @@
             </div>
         </section>
 
-        <!-- CTA Strip - Reforço de Localização -->
         <div class="cta-strip">
             <div class="container">
                 <p>Precisa de vidraceiro urgente no <strong>ABC</strong> ou <strong>Zona Sul de SP</strong>? <a href="https://api.whatsapp.com/send?phone=5511947622679" target="_blank" rel="noopener">Chame no WhatsApp Agora!</a></p>
@@ -343,7 +349,7 @@
                     </div>
                 </div>
                 <div class="contact-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.5422616147716!2d-46.56847052382601!3d-23.65584826131109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce43d1a4d9c79f%3A0x6b4c2e6f4a8e2e2a!2sRua%20Castro%20Alves%2C%2057%20-%20Planalto%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009896-180!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.5517316744046!2d-46.57104492466657!3d-23.65624777873531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4386926639d3%3A0xc3f6050b86a88b5e!2sR.%20Castro%20Alves%2C%2057%20-%20Planalto%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009896-180!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </section>
@@ -424,12 +430,10 @@
             const todosModais = document.querySelectorAll('.modal-container');
 
             if (overlay && modal) {
-                todosModais.forEach(m => m.style.display = 'none'); // Fecha outros
-                modal.style.display = 'block'; // Abre o certo
-                overlay.classList.add('active'); // Mostra fundo
-                document.body.style.overflow = 'hidden'; // Trava rolagem
-            } else {
-                console.error("Erro: Modal não encontrado -> " + id);
+                todosModais.forEach(m => m.style.display = 'none'); 
+                modal.style.display = 'block'; 
+                overlay.classList.add('active'); 
+                document.body.style.overflow = 'hidden'; 
             }
         }
 
@@ -437,13 +441,12 @@
             const overlay = document.getElementById('modal-overlay');
             if (overlay) {
                 overlay.classList.remove('active');
-                document.body.style.overflow = 'auto'; // Destrava rolagem
+                document.body.style.overflow = 'auto'; 
             }
         }
 
-        /* --- 2. QUANDO O SITE CARREGA --- */
+        /* --- 2. LOGICA GERAL --- */
         document.addEventListener('DOMContentLoaded', () => {
-
             // Menu Mobile
             const menuToggle = document.querySelector('.menu-toggle');
             const navMenu = document.querySelector('.nav-menu');
@@ -461,56 +464,26 @@
                 });
             }
 
-            // Inicializar Carrossel (Swiper)
+            // Swiper
             if (typeof Swiper !== 'undefined') {
                 new Swiper(".myPortfolioSwiper", {
                     slidesPerView: 1,
                     spaceBetween: 20,
                     loop: true,
-                    autoplay: {
-                        delay: 4000,
-                        disableOnInteraction: false,
-                    },
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                    },
-                    pagination: {
-                        el: ".swiper-pagination",
-                        clickable: true,
-                    },
+                    autoplay: { delay: 4000, disableOnInteraction: false },
+                    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+                    pagination: { el: ".swiper-pagination", clickable: true },
                     breakpoints: {
                         768: { slidesPerView: 2, spaceBetween: 30 },
                         1024: { slidesPerView: 3, spaceBetween: 30 }
                     }
                 });
-            } else {
-                console.error("Swiper não carregado.");
             }
 
-            // Animação ao rolar (Simples)
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            });
-
-            document.querySelectorAll('.animate-on-scroll, .animate-on-load').forEach(el => {
-                el.style.opacity = 0;
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-                observer.observe(el);
-            });
-
-            // Lógica do FAQ (Acordeão)
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(btn => {
+            // FAQ
+            document.querySelectorAll('.faq-question').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const item = btn.parentElement;
-                    item.classList.toggle('active');
+                    btn.parentElement.classList.toggle('active');
                 });
             });
         });
