@@ -29,11 +29,13 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Glazier",
+      "@type": "LocalBusiness",
       "name": "Di-vidros",
       "image": "https://www.dividrossp.com.br/images/didi.png",
+      "@id": "https://www.dividrossp.com.br",
       "url": "https://www.dividrossp.com.br",
-      "description": "Vidraçaria especializada em vidros temperados, boxes, espelhos e esquadrias de alumínio em São Bernardo do Campo e Grande ABC.",
+      "telephone": "+5511969875659",
+      "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "R. Castro Alves, 57 - Planalto",
@@ -47,30 +49,14 @@
         "latitude": -23.655848,
         "longitude": -46.568470
       },
-      "telephone": "+5511969875659",
-      "priceRange": "$$",
-      "areaServed": [
-        "São Bernardo do Campo",
-        "Santo André",
-        "São Caetano do Sul",
-        "Diadema",
-        "São Paulo"
-      ],
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-          ],
-          "opens": "08:00",
-          "closes": "18:00"
-        }
-      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
       "sameAs": [
         "https://www.instagram.com/dividrossp",
         "https://www.facebook.com/share/16tSUMyFy7/"
@@ -78,7 +64,20 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
-        "reviewCount": "87"
+        "reviewCount": "87",
+        "itemReviewed": {
+          "@type": "LocalBusiness",
+          "name": "Di-vidros",
+          "image": "https://www.dividrossp.com.br/images/didi.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "R. Castro Alves, 57 - Planalto",
+            "addressLocality": "São Bernardo do Campo",
+            "addressRegion": "SP",
+            "postalCode": "09896-180",
+            "addressCountry": "BR"
+          }
+        }
       }
     }
     </script>
@@ -112,7 +111,6 @@
             <div class="container hero-content">
                 <p class="hero-welcome-text">Di-vidros & Esquadrias de Alumínio</p>
                 <h1 class="hero-title">Vidros, Boxes e Esquadrias de Alumínio em São Bernardo do Campo, ABC e SP.</h1>
-                
                 <div class="hero-btn-container">
                     <a href="https://api.whatsapp.com/send?phone=5511947622679" class="btn hero-cta-btn" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Quero entrar em contato
@@ -124,37 +122,36 @@
         <section id="servicos" class="services-section">
             <div class="container">
                 <h2 class="section-title">Serviços de Vidraçaria no ABC</h2>
-                <p class="section-subtitle">Soluções completas em vidro e alumínio para seu projeto em SP.</p>
                 <div class="services-grid">
                     <div class="service-item">
-                        <img src="images/box012.jpg" alt="Instalação de Box para Banheiro em Vidro Temperado" loading="lazy">
+                        <img src="images/box012.jpg" alt="Box para Banheiro" loading="lazy">
                         <h3>Box para Banheiro</h3>
-                        <p>Variedade de modelos e acabamentos, com vidros temperados de segurança.</p>
+                        <p>Variedade de modelos e acabamentos com vidros temperados.</p>
                     </div>
                     <div class="service-item">
-                        <img src="images/area.jpg" alt="Portas e Janelas de Vidro em SBC" loading="lazy">
+                        <img src="images/area.jpg" alt="Portas e Janelas" loading="lazy">
                         <h3>Portas e Janelas de Vidro</h3>
-                        <p>Design moderno e funcionalidade para entradas e ambientes.</p>
+                        <p>Design moderno para entradas e ambientes variados.</p>
                     </div>
                     <div class="service-item">
-                        <img src="images/teto.jpg" alt="Envidraçamento de Sacadas e Varandas" loading="lazy">
+                        <img src="images/teto.jpg" alt="Sacadas" loading="lazy">
                         <h3>Envidraçamento de Sacadas</h3>
-                        <p>Transforme seu ambiente com vistas panorâmicas e proteção.</p>
+                        <p>Proteção e vista panorâmica para sua varanda.</p>
                     </div>
                     <div class="service-item">
-                        <img src="images/escada0202.jpg" alt="Guarda Corpo de Vidro e Escadas" loading="lazy">
+                        <img src="images/escada0202.jpg" alt="Guarda Corpo" loading="lazy">
                         <h3>Guarda Corpo e Escadas</h3>
-                        <p>Segurança e elegância para escadas, mezaninos e varandas.</p>
+                        <p>Segurança e elegância para mezaninos e escadas.</p>
                     </div>
                     <div class="service-item">
-                        <img src="images/esquadria.jpg" alt="Esquadrias de Alumínio sob medida" loading="lazy">
+                        <img src="images/esquadria.jpg" alt="Esquadrias" loading="lazy">
                         <h3>Esquadrias de Alumínio</h3>
-                        <p>Varandas e áreas gourmet com design e liberdade.</p>
+                        <p>Perfis sob medida com alta durabilidade.</p>
                     </div>
                     <div class="service-item">
                         <img src="images/espelholed.jpg" alt="Espelhos" loading="lazy">
                         <h3>Espelhos com LED</h3>
-                        <p>Combinação perfeita de funcionalidade e design.</p>
+                        <p>Funcionalidade e design para banheiros e salas.</p>
                     </div>
                 </div>
             </div>
@@ -163,18 +160,12 @@
         <section id="portfolio" class="portfolio-section">
             <div class="container">
                 <h2 class="section-title">Portfólio de Obras Realizadas</h2>
-                <p class="section-subtitle">Qualidade e detalhe em cada projeto.</p>
-                
                 <div class="swiper myPortfolioSwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide portfolio-item"><img src="images/luxo1.jpg" alt="Box de Vidro Elegante em SBC" loading="lazy"></div>
-                        <div class="swiper-slide portfolio-item"><img src="images/espelho123.jpg" alt="Espelho com LED para Banheiro" loading="lazy"></div>
-                        <div class="swiper-slide portfolio-item"><img src="images/portifole1.jpg" alt="Envidraçamento de Sacada Residencial" loading="lazy"></div>
-                        <div class="swiper-slide portfolio-item"><img src="images/luxo 4.jpg" alt="Esquadria de Alumínio Preta Moderna" loading="lazy"></div>
-                        <div class="swiper-slide portfolio-item"><img src="images/luxo1.jpg" alt="Box de Banheiro Vidro Temperado" loading="lazy"></div>
-                        <div class="swiper-slide portfolio-item"><img src="images/espelho123.jpg" alt="Instalação de Espelhos Decorativos" loading="lazy"></div>
-                        <div class="swiper-slide portfolio-item"><img src="images/portifole1.jpg" alt="Fechamento de Varanda com Vidro" loading="lazy"></div>
-                        <div class="swiper-slide portfolio-item"><img src="images/luxo 4.jpg" alt="Portas de Alumínio e Vidro" loading="lazy"></div>
+                        <div class="swiper-slide portfolio-item"><img src="images/luxo1.jpg" alt="Obra 1"></div>
+                        <div class="swiper-slide portfolio-item"><img src="images/espelho123.jpg" alt="Obra 2"></div>
+                        <div class="swiper-slide portfolio-item"><img src="images/portifole1.jpg" alt="Obra 3"></div>
+                        <div class="swiper-slide portfolio-item"><img src="images/luxo 4.jpg" alt="Obra 4"></div>
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -183,31 +174,12 @@
             </div>
         </section>
 
-        <section id="quem-somos" class="about-section">
-            <div class="container about-content">
-                <div class="about-image">
-                    <img src="images/equipe.jpg" alt="Equipe Di-vidros" loading="lazy">
-                </div>
-                <div class="about-text">
-                    <h2 class="section-title">Vidraçaria de Confiança no ABC</h2>
-                    <p>Com anos de experiência no mercado de vidraçaria em <strong>São Bernardo do Campo</strong> (atendendo Rudge Ramos, Assunção, Centro, Paulicéia e região) e todo o <strong>Grande ABC</strong>, a Di-vidros se destaca pela excelência em cada projeto.</p>
-                    <p>Priorizamos a segurança, a estética e a funcionalidade, trabalhando com materiais de primeira linha e uma equipe qualificada.</p>
-                    <a href="#contato" class="btn about-cta">Fale com Nossos Especialistas</a>
-                </div>
-            </div>
-        </section>
-
         <section id="orcamento" class="quote-section">
             <div class="container">
                 <h2 class="section-title" style="color: #fff;">Peça Seu Orçamento Rápido</h2>
-                <p class="section-subtitle" style="color: #ddd;">Descreva seu projeto e receba uma proposta personalizada.</p>
                 <div class="quote-buttons-wrapper">
-                    <a href="https://api.whatsapp.com/send?phone=5511947622679" class="btn quote-whatsapp-btn" target="_blank" rel="noopener">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="tel:+5511947622679" class="btn quote-call-btn">
-                        <i class="fas fa-phone-alt"></i> (11) 94762-2679
-                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=5511947622679" class="btn quote-whatsapp-btn" target="_blank">WhatsApp</a>
+                    <a href="tel:+5511947622679" class="btn quote-call-btn">(11) 94762-2679</a>
                 </div>
             </div>
         </section>
@@ -215,63 +187,18 @@
         <section id="dicas" class="tips-section">
             <div class="container">
                 <h2 class="section-title">Dicas Di-vidros</h2>
-                <p class="section-subtitle">Conheça mais sobre vidros, cuidados e tendências.</p>
-                
                 <div class="tips-grid">
                     <div class="tip-item" onclick="abrirModal('modal1')">
-                        <img src="images/limparvidro.jpg" alt="Limpeza" loading="lazy">
+                        <img src="images/limparvidro.jpg" alt="Limpeza">
                         <h3>Como Limpar Vidros</h3>
-                        <p>Descubra os segredos para manter seus vidros sempre brilhantes.</p>
-                        <span class="read-more">Ler dica <i class="fas fa-plus"></i></span>
                     </div>
-                    
                     <div class="tip-item" onclick="abrirModal('modal2')">
-                        <img src="images/seguranca.jpg" alt="Segurança" loading="lazy">
+                        <img src="images/seguranca.jpg" alt="Segurança">
                         <h3>Vidro Temperado</h3>
-                        <p>Entenda por que o vidro temperado é a melhor escolha.</p>
-                        <span class="read-more">Ler dica <i class="fas fa-plus"></i></span>
                     </div>
-                    
                     <div class="tip-item" onclick="abrirModal('modal3')">
-                        <img src="images/manutencao-box-vidro-blindex-01.jpg" alt="Manutenção" loading="lazy">
+                        <img src="images/manutencao-box-vidro-blindex-01.jpg" alt="Manutenção">
                         <h3>Manutenção Preventiva</h3>
-                        <p>Pequenos cuidados que prolongam a vida útil das esquadrias.</p>
-                        <span class="read-more">Ler dica <i class="fas fa-plus"></i></span>
-                    </div>
-                </div>
-
-                <div class="norms-section">
-                    <h3>Importância das Normas Técnicas</h3>
-                    <p>Segurança em primeiro lugar! Seguimos rigorosamente a NBR 7199 e NBR 16259.</p>
-                    <ul class="norms-list">
-                        <li>✅ Evita acidentes e quebras</li>
-                        <li>✅ Garante a durabilidade do vidro</li>
-                        <li>✅ Traz mais confiança para o cliente final</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="depoimentos" class="testimonials-section">
-            <div class="container">
-                <h2 class="section-title">O que dizem nossos clientes</h2>
-                <p class="section-subtitle">Confiança construída em todo o ABC e São Paulo.</p>
-                
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Instalaram o box do meu banheiro no <strong>Rudge Ramos</strong> com muita agilidade. O acabamento ficou impecável e deixaram tudo limpo."</p>
-                        <p class="client-name">- Marcos Oliveira, SBC</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Fiz o fechamento da minha sacada em <strong>Santo André</strong>. Preço justo e material de primeira. Recomendo a Di-vidros!"</p>
-                        <p class="client-name">- Ana Paula Souza, Santo André</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Precisava de um espelho grande para minha sala no <strong>Ipiranga (SP)</strong>. O atendimento foi excelente desde o orçamento até a entrega."</p>
-                        <p class="client-name">- Ricardo Mendes, São Paulo</p>
                     </div>
                 </div>
             </div>
@@ -280,212 +207,87 @@
         <section id="faq" class="faq-section">
             <div class="container">
                 <h2 class="section-title">Dúvidas Frequentes</h2>
-                <p class="section-subtitle">Respostas para as principais perguntas sobre vidros e instalação.</p>
-                
                 <div class="faq-container">
                     <div class="faq-item">
-                        <button class="faq-question">Qual o prazo de entrega para Box de Vidro? <i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer">
-                            <p>Geralmente, para vidros temperados padrão, o prazo médio é de 5 a 10 dias úteis após a medição final. Para projetos especiais ou vidros laminados, o prazo pode variar. Consulte nossa equipe para urgências.</p>
-                        </div>
+                        <button class="faq-question">Qual o prazo de entrega? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>5 a 10 dias úteis para vidros padrão.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">Vocês atendem quais bairros de São Bernardo e SP? <i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer">
-                            <p>Atendemos todo o Grande ABC (Santo André, São Bernardo, São Caetano, Diadema) e principais zonas de São Paulo Capital, especialmente Zona Sul (Ipiranga, Saúde, Jabaquara, Vila Mariana).</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">O vidro temperado é seguro para crianças? <i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer">
-                            <p>Sim! O vidro temperado é até 5x mais resistente que o comum. Além disso, em caso de quebra, ele se fragmenta em pequenos pedaços não cortantes, minimizando riscos de acidentes graves, conforme norma NBR 7199.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">Fazem fechamento de sacada com vidro? <i class="fas fa-chevron-down"></i></button>
-                        <div class="faq-answer">
-                            <p>Sim, somos especialistas em envidraçamento de sacadas com sistema de roldanas de alta performance, garantindo abertura total ou parcial, vedação contra chuva e redução de ruídos.</p>
-                        </div>
+                        <button class="faq-question">Quais regiões atendem? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Todo o ABC e SP Capital (Zona Sul, Ipiranga, etc).</p></div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="seo-local-content">
-            <div class="container">
-                <h2>Atendimento Especializado em Vidraçaria no ABC e SP</h2>
-                <div class="seo-text-block">
-                    <p>A <strong>Di-vidros</strong> é referência quando se procura por <em>vidraçaria em São Bernardo do Campo</em> e região. Nossa equipe volante atende com agilidade os principais bairros de SBC, incluindo <strong>Rudge Ramos, Paulicéia, Assunção, Taboão, Demarchi, Baeta Neves e Centro</strong>.</p>
-                    <p>Além do ABC, expandimos nossa qualidade para <strong>São Paulo Capital</strong>, com forte atuação na Zona Sul e bairros como Ipiranga, Sacomã, Cursino e Vila Mariana. Seja para instalação de <a href="#servicos">Box de Banheiro</a>, Espelhos Bisotê, Guarda-corpo ou Manutenção de Sacadas, garantimos o melhor custo-benefício.</p>
-                    <p>Trabalhamos exclusivamente com vidros certificados (Temperados, Laminados e Serigrafados) e perfis de alumínio com pintura eletrostática que não descascam. Solicite um orçamento sem compromisso e renove sua casa com segurança.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="cta-strip">
-            <div class="container">
-                <p>Precisa de vidraceiro urgente no <strong>ABC</strong> ou <strong>Zona Sul de SP</strong>? <a href="https://api.whatsapp.com/send?phone=5511947622679" target="_blank" rel="noopener">Chame no WhatsApp Agora!</a></p>
-            </div>
-        </div>
 
         <section id="contato" class="contact-section">
             <div class="container">
                 <h2 class="section-title">Fale Conosco</h2>
                 <div class="contact-info-grid">
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt contact-icon"></i>
-                        <h3>Telefone</h3>
-                        <p>(11) 96987-5659</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        <h3>E-mail</h3>
-                        <p>dividrossp@gmail.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt contact-icon"></i>
-                        <h3>Endereço</h3>
-                        <p>R. Castro Alves, 57 - Planalto, SBC - SP</p>
-                    </div>
+                    <div class="contact-item"><i class="fas fa-phone-alt"></i><p>(11) 96987-5659</p></div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i><p>dividrossp@gmail.com</p></div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><p>R. Castro Alves, 57 - SBC</p></div>
                 </div>
                 <div class="contact-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.5517316744046!2d-46.57104492466657!3d-23.65624777873531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4386926639d3%3A0xc3f6050b86a88b5e!2sR.%20Castro%20Alves%2C%2057%20-%20Planalto%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009896-180!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.551605389!2d-46.5710449!3d-23.655848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4360e5886617%3A0x6b976f338d77c77d!2sR.%20Castro%20Alves%2C%2057%20-%20Planalto%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="main-footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <img src="images/didi.png" alt="Logo" class="footer-logo">
-                <p>Sua visão, nossa clareza.</p>
-            </div>
-            
-            <div class="footer-locations">
-                <h3>Regiões Atendidas</h3>
-                <ul class="footer-list">
-                    <li>São Bernardo do Campo</li>
-                    <li>Santo André</li>
-                    <li>São Caetano do Sul</li>
-                    <li>São Paulo (Capital)</li>
-                </ul>
-            </div>
-
-            <div class="footer-social">
-                <h3>Siga-nos</h3>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/share/16tSUMyFy7/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/dividrossp?igsh=MXgwNTVmanpjZDl1cA==" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
+        <div class="container footer-bottom">
             <p>© 2024 Di-vidros Box e Acessórios. Todos os direitos reservados.</p>
-            <p style="margin-top: 10px; font-size: 0.8em;">Desenvolvido por <a href="https://www.cybernexinnovatech.com.br" target="_blank" rel="noopener" style="text-decoration: underline;">CyberNex InnovaTech</a></p>
+            <p style="margin-top: 10px; font-size: 0.8em;">Desenvolvido por <a href="https://www.cybernexinnovatech.com.br" target="_blank">CyberNex InnovaTech</a></p>
         </div>
     </footer>
 
-    <a href="https://api.whatsapp.com/send?phone=5511947622679" class="whatsapp-float" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://api.whatsapp.com/send?phone=5511947622679" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <div id="modal-overlay" class="modal-overlay">
         <div id="modal1" class="modal-container">
             <span class="modal-close" onclick="fecharModal()">×</span>
-            <div class="modal-header"><h3>Limpeza de Vidros</h3></div>
-            <div class="modal-body">
-                <p><strong>A Mistura Mágica:</strong> Evite produtos gordurosos. Uma solução caseira infalível é misturar água, álcool e uma colher de vinagre branco.</p>
-                <p><strong>A Ferramenta Certa:</strong> Use um rodo de vidro e finalize com pano de microfibra.</p>
-                <div class="modal-cta"><a href="https://api.whatsapp.com/send?phone=5511947622679" target="_blank" rel="noopener">Tirar Dúvida</a></div>
-            </div>
+            <h3>Limpeza de Vidros</h3>
+            <p>Use água, álcool e vinagre branco. Finalize com microfibra.</p>
         </div>
         <div id="modal2" class="modal-container">
             <span class="modal-close" onclick="fecharModal()">×</span>
-            <div class="modal-header"><h3>Vidro Temperado</h3></div>
-            <div class="modal-body">
-                <p><strong>Resistência:</strong> Até 5x mais resistente que o vidro comum.</p>
-                <p><strong>Segurança:</strong> Se quebrar, estilhaça em pedaços arredondados, evitando cortes graves.</p>
-                <div class="modal-cta"><a href="https://api.whatsapp.com/send?phone=5511947622679" target="_blank" rel="noopener">Orçar Box</a></div>
-            </div>
+            <h3>Vidro Temperado</h3>
+            <p>5x mais resistente. Se quebrar, não forma estilhaços cortantes.</p>
         </div>
         <div id="modal3" class="modal-container">
             <span class="modal-close" onclick="fecharModal()">×</span>
-            <div class="modal-header"><h3>Manutenção Preventiva</h3></div>
-            <div class="modal-body">
-                <p><strong>Trilhos:</strong> Aspire o pó mensalmente.</p>
-                <p><strong>Lubrificação:</strong> Use silicone spray ou grafite em pó. Nunca use graxa ou óleo!</p>
-                <div class="modal-cta"><a href="https://api.whatsapp.com/send?phone=5511947622679" target="_blank" rel="noopener">Agendar Manutenção</a></div>
-            </div>
+            <h3>Manutenção Preventiva</h3>
+            <p>Aspire os trilhos e use silicone spray nas roldanas.</p>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <script>
-        /* --- 1. FUNÇÕES DO MODAL --- */
-        window.abrirModal = function(id) {
-            const overlay = document.getElementById('modal-overlay');
-            const modal = document.getElementById(id);
-            const todosModais = document.querySelectorAll('.modal-container');
+        // Menu Mobile
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
 
-            if (overlay && modal) {
-                todosModais.forEach(m => m.style.display = 'none'); 
-                modal.style.display = 'block'; 
-                overlay.classList.add('active'); 
-                document.body.style.overflow = 'hidden'; 
-            }
+        // FAQ
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => btn.parentElement.classList.toggle('active'));
+        });
+
+        // Modais
+        function abrirModal(id) {
+            document.getElementById('modal-overlay').classList.add('active');
+            document.querySelectorAll('.modal-container').forEach(m => m.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
         }
+        function fecharModal() { document.getElementById('modal-overlay').classList.remove('active'); }
 
-        window.fecharModal = function() {
-            const overlay = document.getElementById('modal-overlay');
-            if (overlay) {
-                overlay.classList.remove('active');
-                document.body.style.overflow = 'auto'; 
-            }
-        }
-
-        /* --- 2. LOGICA GERAL --- */
-        document.addEventListener('DOMContentLoaded', () => {
-            // Menu Mobile
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            if (menuToggle && navMenu) {
-                menuToggle.addEventListener('click', () => {
-                    navMenu.classList.toggle('active');
-                });
-            }
-
-            // Fechar modal ao clicar fora
-            const overlay = document.getElementById('modal-overlay');
-            if (overlay) {
-                overlay.addEventListener('click', (e) => {
-                    if (e.target === overlay) window.fecharModal();
-                });
-            }
-
-            // Swiper
-            if (typeof Swiper !== 'undefined') {
-                new Swiper(".myPortfolioSwiper", {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                    loop: true,
-                    autoplay: { delay: 4000, disableOnInteraction: false },
-                    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-                    pagination: { el: ".swiper-pagination", clickable: true },
-                    breakpoints: {
-                        768: { slidesPerView: 2, spaceBetween: 30 },
-                        1024: { slidesPerView: 3, spaceBetween: 30 }
-                    }
-                });
-            }
-
-            // FAQ
-            document.querySelectorAll('.faq-question').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    btn.parentElement.classList.toggle('active');
-                });
-            });
+        // Swiper
+        new Swiper(".myPortfolioSwiper", {
+            slidesPerView: 1, spaceBetween: 20, loop: true,
+            autoplay: { delay: 4000 },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
         });
     </script>
 </body>
